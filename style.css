@@ -7,6 +7,8 @@
   --color-light--1: #aaa;
   --color-light--2: #ececec;
   --color-light--3: rgb(214, 222, 224);
+
+  --color-red: #ce1b1b;
 }
 
 * {
@@ -21,7 +23,7 @@ html {
 }
 
 body {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   color: var(--color-light--2);
   font-weight: 400;
   line-height: 1.6;
@@ -65,18 +67,28 @@ a:visited {
 .workouts::-webkit-scrollbar {
   width: 0;
 }
-
+.workout-container {
+  display: grid;
+}
 .workout {
   background-color: var(--color-dark--2);
   border-radius: 5px;
   padding: 1.5rem 2.25rem;
   margin-bottom: 1.75rem;
   cursor: pointer;
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0.75rem 1.5rem;
 }
+.workout-options {
+  background-color: rgba(var(--color-light--2), 0.3);
+  justify-self: end;
+  font-size: 1rem;
+  color: #ffffff;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
 .workout--running {
   border-left: 5px solid var(--color-brand--2);
 }
@@ -168,9 +180,31 @@ a:visited {
 }
 
 .form__btn {
-  display: none;
+  padding: 0.3rem 3rem;
+  margin-top: 0.3rem;
+  grid-column: 1/-1;
+  justify-self: center;
+  font-family: inherit;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--color-light--3);
+  transition: all 0.2s;
 }
-
+.reset {
+  background-color: var(--color-dark--2);
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  margin: 1.75rem auto;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.reset:hover {
+  background-color: var(--color-red);
+  color: var(--color-light--3);
+  transition: all 0.3s;
+}
 .copyright {
   margin-top: auto;
   font-size: 1.3rem;
